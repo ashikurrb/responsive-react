@@ -1,23 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import notFound from "../../Images/404.jpeg";
 
 const NotFound = () => {
   return (
-    <div className="container">
-      <img
-        style={{ width: "75%" }}
-        className="img-fluid"
-        src="https://miro.medium.com/max/1400/1*cLQUX8jM2bMdwMcV2yXWYA.jpeg"
-        alt=""
-      />
+    <div>
+      <img style={{ width: "100%" }} src={notFound} alt="" />
       <br />
       <br />
-      <Link to="/home">
-        <button>GO Back</button>
+      <Link to="/">
+        <button className="btn btn-success">GO Back</button>
       </Link>
-
     </div>
-
   );
 };
 
