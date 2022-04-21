@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <div className="container">
       <img
-        style={{ width: "75%"}}
+        style={{ width: "75%" }}
         className="img-fluid"
         src="https://miro.medium.com/max/1400/1*cLQUX8jM2bMdwMcV2yXWYA.jpeg"
         alt=""
