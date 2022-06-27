@@ -12,22 +12,22 @@ import initializeAuthentication from "../Pages/Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
-  const [users, setUsers] = useState({});
+  const [user, setUser] = useState({});
   const auth = getAuth();
 
   const signInUsingGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider).then((result) => {
-      setUsers(result.user);
+      setUser(result.user);
     });
   };
 
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUsers(user);
+        setUser(user);
       } else {
-        setUsers({});
+        setUser({});
       }
     });
     return () => unsubscribed();
@@ -37,7 +37,7 @@ const useFirebase = () => {
     signOut(auth).then(() => {});
   };
 
-  return { user: users, signInUsingGoogle, logOut };
+  return { user: user, signInUsingGoogle, logOut };
 };
 
 export default useFirebase;
